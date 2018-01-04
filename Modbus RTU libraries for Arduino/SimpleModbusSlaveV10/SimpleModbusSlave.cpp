@@ -84,7 +84,10 @@ unsigned int modbus_update()
 		  else
 		  {
 			  if (buffer == BUFFER_SIZE)
+			  {
 				  overflow = 1;
+				  continue;
+			  }
 			  frame[buffer] = (*ModbusPort).read();
 			  buffer++;
 		  }
@@ -95,7 +98,7 @@ unsigned int modbus_update()
 	  // variable and return to the main sketch without 
 	  // responding to the request i.e. force a timeout
 	  if (overflow)
-		  return errorCount++;
+		  return ++errorCount;
 	
 	  // The minimum request packet is 8 bytes for function 3 & 16
     if (buffer > 7) 
