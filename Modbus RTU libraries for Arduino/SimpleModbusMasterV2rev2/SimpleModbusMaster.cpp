@@ -226,7 +226,10 @@ void waiting_for_reply()
 			else
 			{
 				if (buffer == BUFFER_SIZE)
+				{
 					overflowFlag = 1;
+					continue;
+				}
 			
 				frame[buffer] = (*ModbusPort).read();
 				buffer++;
