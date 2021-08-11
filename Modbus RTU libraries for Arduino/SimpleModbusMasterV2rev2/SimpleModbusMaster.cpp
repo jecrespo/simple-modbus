@@ -383,12 +383,22 @@ void processError()
 	
 	// if the number of retries have reached the max number of retries 
   // allowable, stop requesting the specific packet
-  if (packet->retries == retry_count)
-	{
-    packet->connection = 0;
+  if (retry_count == _Disable)
+  {
+	  
+  }
+
+  else
+  {
+	  if (packet->retries == retry_count)
+	  {
+    	packet->connection = 0;
 		packet->retries = 0;
-	}
-	state = WAITING_FOR_TURNAROUND;
+	  }
+
+  }
+  
+  	state = WAITING_FOR_TURNAROUND;
 	delayStart = millis(); // start the turnaround delay
 }
 

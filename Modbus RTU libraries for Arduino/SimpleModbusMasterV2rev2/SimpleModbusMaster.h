@@ -93,6 +93,8 @@
 #define FORCE_MULTIPLE_COILS 15 // Forces each coil (0X reference) in a sequence of coils to either ON or OFF.
 #define PRESET_MULTIPLE_REGISTERS 16 // Presets values into a sequence of holding registers (4X references).
 
+#define _Disable 0 
+
 typedef struct
 {
   // specific packet info

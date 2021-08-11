@@ -12,7 +12,9 @@
 #define baud 9600
 #define timeout 1000
 #define polling 200 // the scan rate
-#define retry_count 10
+#define retry_count _Disable // To Disable the Retry count
+
+//#define retry_count 15 // To Enable Retry Count 
 
 // used to toggle the receive/transmit pin on the driver
 #define TxEnablePin 2 
